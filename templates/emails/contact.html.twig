@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BookMakerController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Coupon disponible aujourd'hui</h1>
+    <p>Les codes  coupons par BookMaker disponible aujourd'hui se presente:</p>
+      
+       <table class="table">
+              <thead>
+            
+                  <tr>
+                      <th>BookMaker</th>
+                      <th>Code Coupon</th>
+                  </tr>
+              </thead>
+              <tbody> 
+                     <tr>
+                       {% for coup in coupons %}
+                         <td>{{coup.book.name}}</td>
+                          <td>{{coup.code}}</td>
+                       {% endfor %}  
+                      </tr>
+              </tbody>
+          </table>
+    
+</div>
+{% endblock %}

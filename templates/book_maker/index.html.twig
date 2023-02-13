@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BookMakerController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Coupon du jour</h1>
+    <a href="{{path('app_book_maker_create')}}">Ajouter un bookMaker</a>
+    <a href="{{path('app_coupon_ajouter')}}">Nouveau coupon</a>
+    <a href="{{path('app_macher_coupon_ajouter')}}">Marchet de coupon</a>
+    <form action="{{path('app_abonement')}}" method="POST">
+       <input type="hidden" name="csrf_token" value="{{csrf_token('user_abonement' ~ app.user )}}">
+       <input type="submit" name="_method" value="S'abonement">
+    </form>
+</div>
+{% endblock %}
