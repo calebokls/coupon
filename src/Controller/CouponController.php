@@ -28,6 +28,7 @@ class CouponController extends AbstractController
         {
             $em->persist($coupon);
             $em->flush();
+            $this->addFlash('success','Coupon ajouter avec success');
             return $this->redirectToRoute('app_coupon_ajouter');
         }
         return $this->render('coupon/ajouter.html.twig',[

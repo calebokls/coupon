@@ -52,6 +52,7 @@ class AbonementController extends AbstractController
      {
         $users = $ab->FindByUser();
         $coupons = $CoupRepo->findAll();
+
         // dd($coupons);
         foreach($users as $u )
         {
